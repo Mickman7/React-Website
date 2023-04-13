@@ -24,9 +24,10 @@ export default function App() {
       Component = <Contact />;
       break;
   }
+
   return (
     <div>
-      <Navbar />;{Component}
+      <Navbar />
     </div>
   );
 }

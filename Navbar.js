@@ -8,19 +8,22 @@ export default function Navbar() {
         Site Name
       </a>
       <ul>
-        <li className="active">
-          <a href="/home">Home</a>
-        </li>
-        <li>
-          <a href="/services">Services</a>
-        </li>
-        <li>
-          <a href="/about">About</a>
-        </li>
-        <li>
-          <a href="/contact">Contact Us</a>
-        </li>
+        <CustomLink href="/home">Home</CustomLink>
+        <CustomLink hfre="/services">Services</CustomLink>
+        <CustomLink href="/about">About</CustomLink>
+        <CustomLink href="/contact">Contact Us</CustomLink>
       </ul>
     </nav>
+  );
+}
+
+function CustomLink({ href, children, ...props }) {
+  const path = window.location.pathname;
+  return (
+    <li className={path === href ? 'active' : ''}>
+      <a href={href} {...props}>
+        {children}
+      </a>
+    </li>
   );
 }

@@ -7,27 +7,29 @@ import Contact from './pages/Contact';
 
 export default function App() {
   //console.log(window.location);
-  var Component;
+  let component;
   switch (window.location.pathname) {
     case '/':
+      component = <Home />;
       break;
     case '/home':
-      Component = <Home />;
+      component = <Home />;
       break;
     case '/services':
-      Component = <Services />;
+      component = <Services />;
       break;
     case '/about':
-      Component = <About />;
+      component = <About />;
       break;
     case '/contact':
-      Component = <Contact />;
+      component = <Contact />;
       break;
   }
 
   return (
     <div>
       <Navbar />
+      <div className="container">{component}</div>
     </div>
   );
 }
